@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack MAMÁ FIT EN 15 MIN - Transforma tu cuerpo en solo 15 minutos</title>
+    <meta name="description" content="Guía completa de ejercicios, recetas saludables y mindset para mamás ocupadas. Solo 15 minutos al día.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #2D9B9B;
+            --color-secondary: #E91E63;
+            --color-accent: #FF6B9D;
+            --color-dark: #333;
+            --color-light: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-dark);
+            background: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1E7E7E 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2D9B9B 0%, #1E7E7E 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-image {
+            max-width: 800px;
+            width: 100%;
+            border-radius: 20px;
+            margin: 2rem auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* CTA Button */
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1faa52;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-whatsapp::before {
+            content: "📱 ";
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #FFD700;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* What's Included */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .included-item {
+            background: var(--color-light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .included-item:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .included-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .included-item h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Benefits */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: white;
+            border-left: 4px solid var(--color-secondary);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-item .check {
+            color: var(--color-secondary);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--color-light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: #FFD700;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #FFD700 0%, #FFA500 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">💪 MAMÁ FIT EN 15 MIN</div>
+            <a href="#comprar" class="btn-whatsapp" style="padding: 0.8rem 2rem; font-size: 1rem; margin: 0;">COMPRAR AHORA</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <div class="badge">🔥 PACK COMPLETO DIGITAL</div>
+            <h1>Transformá Tu Cuerpo y Tu Mente<br>en Solo 15 Minutos al Día</h1>
+            <p class="subtitle">El programa completo para mamás ocupadas que quieren sentirse fuertes, saludables y felices</p>
+            
+            <img src="images/hero-cover.jpg" alt="Pack Mamá Fit en 15 min" class="hero-image">
+            
+            <p class="price">💰 PRECIO ESPECIAL DE LANZAMIENTO</p>
+            <a href="#comprar" class="btn-whatsapp">¡QUIERO MI PACK AHORA!</a>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">✅ Acceso inmediato | ✅ Pago por transferencia | ✅ Soporte completo</p>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section id="incluye">
+        <h2 class="section-title">📦 ¿Qué Incluye el Pack?</h2>
+        
+        <div class="included-grid">
+            <div class="included-item fade-in">
+                <div class="icon">💪</div>
+                <h3>Guía Completa de Ejercicios</h3>
+                <p>40 páginas con 30 ejercicios ilustrados, rutinas de 4 semanas, 3 niveles de dificultad (principiante a avanzado)</p>
+            </div>
+
+            <div class="included-item fade-in">
+                <div class="icon">🍽️</div>
+                <h3>Recetario Saludable</h3>
+                <p>40 recetas rápidas (máximo 20 minutos), desayunos, comidas, cenas y snacks, opciones sin lácteos y sin gluten</p>
+            </div>
+
+            <div class="included-item fade-in">
+                <div class="icon">🧠</div>
+                <h3>Guía de Mindset</h3>
+                <p>"Mamá Primero": Guía de autocuidado, manejo de culpa materna, límites saludables, 30 afirmaciones diarias</p>
+            </div>
+
+            <div class="included-item fade-in">
+                <div class="icon">👶</div>
+                <h3>BONUS: Ejercicios con Bebé</h3>
+                <p>Rutinas especiales para hacer con tu bebé (3 meses a 3 años), convierte el ejercicio en tiempo de calidad</p>
+            </div>
+
+            <div class="included-item fade-in">
+                <div class="icon">📊</div>
+                <h3>Calculadora Nutricional</h3>
+                <p>Planilla Excel inteligente para calcular tus necesidades calóricas, macros personalizados según tus objetivos</p>
+            </div>
+
+            <div class="included-item fade-in">
+                <div class="icon">📈</div>
+                <h3>Registro de Avances</h3>
+                <p>Planilla Excel para trackear tu progreso, medidas, peso, hábitos diarios con gráficos automáticos</p>
+            </div>
+
+            <div class="included-item fade-in">
+                <div class="icon">📱</div>
+                <h3>Planner Digital Interactivo</h3>
+                <p>Acceso a "Mi Semana Fit": planner web interactivo, tracker de hábitos, hidratación, registro emocional</p>
+            </div>
+
+            <div class="included-item fade-in">
+                <div class="icon">📄</div>
+                <h3>Guía Para La Heladera</h3>
+                <p>Documento imprimible con recordatorios, tips rápidos, afirmaciones motivadoras para tener siempre a mano</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section style="background: var(--color-light);">
+        <h2 class="section-title">✨ Beneficios del Programa</h2>
+        
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <span class="check">✅</span>
+                <p><strong>Solo 15 minutos al día</strong> - Perfecto para mamás ocupadas sin tiempo</p>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✅</span>
+                <p><strong>Sin equipamiento necesario</strong> - Entrena en casa con tu propio peso</p>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✅</span>
+                <p><strong>Para todos los niveles</strong> - Desde principiante hasta avanzado</p>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✅</span>
+                <p><strong>Apto post-parto</strong> - Ejercicios seguros después del parto (con autorización médica)</p>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✅</span>
+                <p><strong>Recetas familiares</strong> - Comida que toda la familia disfrutará</p>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✅</span>
+                <p><strong>Ingredientes accesibles</strong> - Nada raro ni costoso, solo comida real</p>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✅</span>
+                <p><strong>Mindset de mamá real</strong> - Sin culpa, sin perfección, solo progreso</p>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✅</span>
+                <p><strong>Acceso inmediato</strong> - Descarga todo en minutos después de tu compra</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="galeria">
+        <h2 class="section-title">📸 Vista Previa del Contenido</h2>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/testimonial.png" alt="Testimonio de transformación">
+            </div>
+            <div class="gallery-item">
+                <img src="images/before-after.png" alt="Resultados reales">
+            </div>
+            <div class="gallery-item">
+                <img src="images/app-preview.png" alt="Vista de la app">
+            </div>
+            <div class="gallery-item">
+                <img src="images/pack-content.png" alt="Contenido del pack">
+            </div>
+            <div class="gallery-item">
+                <img src="images/mobile-preview.png" alt="Dispositivos móviles">
+            </div>
+            <div class="gallery-item">
+                <img src="images/complete-pack.png" alt="Pack completo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">💬 Lo Que Dicen Otras Mamás</h2>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"¡Increíble! Transformé mi cuerpo y mi energía en solo 15 minutos al día. Nunca me sentí tan fuerte y feliz."</p>
+                <p class="testimonial-author">- María, mamá de 2</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Las recetas son súper rápidas y a mis hijos les encantan. Por fin como saludable sin pasar horas en la cocina."</p>
+                <p class="testimonial-author">- Laura, mamá de 3</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"La guía de mindset cambió mi forma de verme como mamá. Ya no me siento culpable por cuidarme."</p>
+                <p class="testimonial-author">- Sofía, mamá primeriza</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">❓ Preguntas Frecuentes</h2>
+        
+        <div class="faq-item">
+            <p class="faq-question">¿Cuándo recibo el contenido?</p>
+            <p class="faq-answer">Inmediatamente después de confirmar tu pago por transferencia, recibirás por WhatsApp todos los archivos PDF, planillas Excel y el enlace al planner digital.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">¿Necesito experiencia previa en ejercicio?</p>
+            <p class="faq-answer">No. El programa tiene 3 niveles: verde (principiante), amarillo (intermedio) y rojo (avanzado). Empezás donde te sientas cómoda.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">¿Es seguro para el post-parto?</p>
+            <p class="faq-answer">La guía incluye indicaciones claras de cuándo empezar (6+ semanas parto normal, 8-12 cesárea) y qué ejercicios evitar. SIEMPRE consultá con tu médico primero.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">¿Necesito comprar equipamiento?</p>
+            <p class="faq-answer">No. Todos los ejercicios se hacen con tu propio peso corporal. Solo necesitás una colchoneta o toalla y espacio de 2x2 metros.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">¿Las recetas son complicadas?</p>
+            <p class="faq-answer">Para nada. Todas se hacen en máximo 20 minutos con ingredientes que encontrás en cualquier mercado. Nada raro ni costoso.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">¿Cómo funciona el pago?</p>
+            <p class="faq-answer">Es por transferencia bancaria. Me contactás por WhatsApp, te paso los datos bancarios, transferís, me enviás el comprobante y te mando todo el contenido al instante.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">¿Hay garantía o devolución?</p>
+            <p class="faq-answer">Al ser contenido digital, no hay devoluciones. Pero te garantizo que si seguís el programa con constancia, VAS a ver resultados.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="comprar">
+        <h2>¡Empezá Tu Transformación HOY!</h2>
+        <p style="font-size: 1.2rem; margin: 1rem 0;">No esperes al "momento perfecto".<br>El momento perfecto es AHORA.</p>
+        
+        <p class="price" style="color: white;">PRECIO ESPECIAL DE LANZAMIENTO</p>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">🎁 <span class="highlight">BONOS INCLUIDOS GRATIS</span></p>
+        
+        <!-- IMPORTANTE: Reemplazá este número con TU número de WhatsApp -->
+        <a href="https://wa.me/5493515123456?text=Hola!%20Quiero%20comprar%20el%20Pack%20MAMÁ%20FIT%20EN%2015%20MIN" 
+           class="btn-whatsapp" 
+           target="_blank"
+           style="background: white; color: #25D366; font-size: 1.4rem;">
+           ¡COMPRAR POR WHATSAPP AHORA!
+        </a>
+        
+        <p style="margin-top: 2rem; font-size: 0.9rem;">✅ Pago 100% seguro por transferencia bancaria<br>✅ Acceso inmediato a todo el contenido<br>✅ Soporte personalizado vía WhatsApp</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>💪 MAMÁ FIT EN 15 MIN</h3>
+            <p style="margin: 1rem 0;">Porque cuidarte no es egoísmo, es amor propio.</p>
+            <p style="margin: 1rem 0;">Porque tus 15 minutos importan.</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+                © 2026 Mamá Fit en 15 min. Todos los derechos reservados.<br>
+                Producto digital de descarga inmediata.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .gallery-item, .included-item, .testimonial, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
